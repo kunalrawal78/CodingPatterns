@@ -1,0 +1,18 @@
+Java Maps functions
+
+for (int num : nums) {
+    freq.put(num, freq.getOrDefault(num, 0) + 1);
+}
+put(key, value)
+get(key)
+getOrDefault(key, defaultValue)
+containsKey(key)
+containsValue(value)
+remove(key)
+keySet()
+values()
+entrySet()
+size()
+clear()
+isEmpty()
+merge(key, value, remappingFunction)

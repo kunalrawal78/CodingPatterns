@@ -1,4 +1,4 @@
-Java Maps functions
+------->Java Maps functions
 
 for (int num : nums) {
     freq.put(num, freq.getOrDefault(num, 0) + 1);
@@ -16,3 +16,12 @@ size()
 clear()
 isEmpty()
 merge(key, value, remappingFunction)
+
+----->Sorting String
+String str = "kunal";
+
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+
+        String sortedStr = new String(chars);
+

@@ -1,0 +1,16 @@
+int j = 0, i = 0;
+while (i < n) {
+    // expand the window by including right element
+    addElement(input[right]);
+
+    // contract the window from left if condition breaks
+    while (condition is violated) {
+        removeElement(input[left]);
+        j++;
+    }
+
+    // update result (max length, count, etc.)
+    updateAnswer();
+
+    i++;
+}

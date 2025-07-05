@@ -14,3 +14,21 @@ while (i < n) {
 
     i++;
 }
+/// FIXED SIZE Sliding window..
+double findMaxAverage(vector<int>& arr, int k) {
+        int n=arr.size();
+        int i=0,j=0;
+        double avg=INT_MIN;
+        double cur=0;
+
+        while(j<n){
+            cur+=arr[j];
+            if((j-i)>=k-1){
+                avg=max(avg,cur/k);
+                cur-=arr[i];
+                i++;
+            }
+            j++;     
+        }
+        return avg;
+}

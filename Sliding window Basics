@@ -1,20 +1,19 @@
-int j = 0, i = 0;
-while (i < n) {
-    // expand the window by including right element
-    addElement(input[right]);
+/// FIXED SIZE Sliding window..
+while (j < n)
+{
+    sum += v[j]; // calculation that is add other element
 
-    // contract the window from left if condition breaks
-    while (condition is violated) {
-        removeElement(input[left]);
-        j++;
+    if (j - i + 1 == k)
+    {
+        cout << sum << endl;
+        sum -= v[i]; // remove previous element
+        i++;
     }
 
-    // update result (max length, count, etc.)
-    updateAnswer();
-
-    i++;
+    j++;
 }
-/// FIXED SIZE Sliding window..
+
+example:
 double findMaxAverage(vector<int>& arr, int k) {
         int n=arr.size();
         int i=0,j=0;
@@ -32,3 +31,72 @@ double findMaxAverage(vector<int>& arr, int k) {
         }
         return avg;
 }
+
+
+int j = 0, i = 0;
+while (i < n) {
+    // expand the window by including right element
+    addElement(input[right]);
+
+    // contract the window from left if condition breaks
+    while (condition is violated) {
+        removeElement(input[left]);
+        j++;
+    }
+
+    // update result (max length, count, etc.)
+    updateAnswer();
+
+    i++;
+}
+Eg:
+
+int lengthOfLongestSubstring(string s) {
+    int i = 0, j = 0, ans = 0;
+    unordered_set<char> seen;
+
+    while (j < s.size()) {
+        if (seen.find(s[j]) == seen.end()) {
+            seen.insert(s[j]);
+            ans = max(ans, j - i + 1);
+            j++;
+        } else {
+            seen.erase(s[i]);
+            i++;
+        }
+    }
+
+    return ans;
+}
+
+int lengthOfLongestSubstring(string s) {
+        int i = 0, j = 0, ans = 0;
+        map<char, int> m; // Map to track characters in the current window
+
+        while (j < s.size()) {
+            m[s[j]]++; // Add current character to the map
+            int windowSize = j - i + 1; // Calculate the current window size
+
+            if (m.size() == windowSize) {
+                ans = max(ans, windowSize); // Update the maximum length of the substring
+                j++; // Expand the window by moving the end pointer
+            }
+            else {
+                while (m.size() < windowSize) {
+                    m[s[i]]--; // Remove characters from the start of the window
+                    if (m[s[i]] == 0)
+                        m.erase(s[i]);
+                    i++; // Move the start pointer to adjust the window
+                    windowSize = j - i + 1; // Update the window size
+                }
+
+                if (m.size() == windowSize) {
+                    ans = max(ans, windowSize); // Update the maximum length of the substring
+                }
+
+                j++; // Expand the window by moving the end pointer
+            }
+        }
+
+        return ans; // Return the length of the longest substring
+    }

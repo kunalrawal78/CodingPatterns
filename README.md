@@ -1,41 +1,47 @@
-# CodingPatterns
+# 📚 CodingPatterns: Java Collections Functions
 
-**Java Collections functions**
+A curated set of Java coding patterns using core collection classes — `HashSet`, `HashMap`, `ArrayList`, and `LinkedList`. Each section includes purpose, common methods, and DSA-style examples.
 
-**HashSet in Java
-Purpose: Stores unique elements, no duplicates, 
-and offers constant-time operations for add, remove, and contains.**
-------------------------------------------------------------------
+---
 
+## 🔹 HashSet in Java
+
+**Purpose:** Stores unique elements with no duplicates. Offers constant-time operations for `add`, `remove`, and `contains`.
+
+### ✅ DSA Problem: First Duplicate in Array
+
+```java
 import java.util.HashSet;
 public class FirstDuplicate {
     public static Integer findFirstDuplicate(int[] nums) {
         HashSet<Integer> seen = new HashSet<>();
         for (int num : nums) {
-            if (seen.contains(num)) {
-                return num; // First duplicate found
-            }
+            if (seen.contains(num)) return num;
             seen.add(num);
         }
-        return null; // No duplicates
+        return null;
     }
     public static void main(String[] args) {
         int[] arr = {3, 1, 4, 2, 5, 3, 2};
         System.out.println("First duplicate: " + findFirstDuplicate(arr));
     }
 }
+🔧 Common Methods
+add(element)
 
-----------------------------------------------------------------------------------------------
-**🔧 Common HashSet Methods:
-add(element) – Adds an element
-contains(element) – Checks if present
-remove(element) – Removes an element
-size() – Returns number of elements
-isEmpty() – Checks if empty**
+contains(element)
 
-**HashMap in Java
-Purpose: Stores key-value pairs, ideal for counting, mapping, and indexing.**
-------------------------------------------------------------------------------------------------
+remove(element)
+
+size()
+
+isEmpty()
+
+🔹 HashMap in Java
+Purpose: Stores key-value pairs. Ideal for counting, mapping, and indexing.
+
+✅ DSA Problem: Frequency Counter
+java
 import java.util.HashMap;
 public class FrequencyCounter {
     public static void countFrequencies(int[] nums) {
@@ -52,29 +58,29 @@ public class FrequencyCounter {
         countFrequencies(arr);
     }
 }
+🔧 Common Methods
+put(key, value)
 
-**🔧 Common HashMap Methods:
-put(key, value) – Inserts or updates
-get(key) – Retrieves value
-getOrDefault(key, default) – Gets value or default
-containsKey(key) – Checks if key exists
-remove(key) – Removes key-value pair
-keySet() – Returns all keys
-values() – Returns all values
-entrySet() – Returns key-value pairs**
+get(key)
 
-**🔍 Bonus: HashSet vs HashMap
-Feature	|HashSet|	HashMap
-Structure|	Stores only values|	Stores key-value pairs
-Use Case	|Check existence, uniqueness|	Count, map, index, cache
-Backed By	| Internally uses HashMap|	Native implementation**
+getOrDefault(key, default)
 
-----------------------------------------------------------------------------------------------------
-**ArrayList in Java
-Backed by: Dynamic array Best for: Fast random access, frequent reads**
+containsKey(key)
 
-✅ DSA Problem: Remove duplicates from a list of integers
+remove(key)
 
+keySet(), values(), entrySet()
+
+🔍 HashSet vs HashMap
+Feature	HashSet	HashMap
+Structure	Stores only values	Stores key-value pairs
+Use Case	Uniqueness check	Counting, mapping, caching
+Backed By	Internally uses HashMap	Native implementation
+🔹 ArrayList in Java
+Backed by: Dynamic array Best for: Fast random access, frequent reads
+
+✅ DSA Problem: Remove Duplicates from List
+java
 import java.util.ArrayList;
 import java.util.HashSet;
 public class RemoveDuplicates {
@@ -95,62 +101,65 @@ public class RemoveDuplicates {
         System.out.println("After removing duplicates: " + removeDuplicates(nums));
     }
 }
+🔧 Common Methods
+add(element)
 
-**🔧 Common ArrayList Methods:
-add(element) – Adds at end
-add(index, element) – Inserts at index
-get(index) – Retrieves element
-set(index, element) – Updates element
-remove(index) – Removes by index
-size() – Returns number of elements
-contains(element) – Checks existence
-clear() – Empties the list**
--------------------------------------------------------------
-**🔹 LinkedList in Java
-Backed by: Doubly linked list Best for: Frequent insertions/deletions**
-✅ DSA Problem: Implement a simple queue using LinkedList
+add(index, element)
 
+get(index)
+
+set(index, element)
+
+remove(index)
+
+size()
+
+contains(element)
+
+clear()
+
+🔹 LinkedList in Java
+Backed by: Doubly linked list Best for: Frequent insertions/deletions
+
+✅ DSA Problem: Simple Queue Implementation
+java
 import java.util.LinkedList;
 public class SimpleQueue {
     public static void main(String[] args) {
         LinkedList<Integer> queue = new LinkedList<>();
-
-        // Enqueue
         queue.addLast(10);
         queue.addLast(20);
         queue.addLast(30);
-        // Dequeue
         System.out.println("Dequeued: " + queue.removeFirst());
-        // Peek
         System.out.println("Front element: " + queue.peekFirst());
-        // Print queue
         System.out.println("Current queue: " + queue);
     }
 }
+🔧 Common Methods
+addFirst(element)
 
-**🔧 Common LinkedList Methods:
-addFirst(element) – Adds to front
-addLast(element) – Adds to end
-removeFirst() – Removes from front
-removeLast() – Removes from end
-peekFirst() – Views front
-peekLast() – Views end
-get(index) – Access by index (slower than ArrayList)**
-<img width="481" height="211" alt="image" src="https://github.com/user-attachments/assets/7f530bd7-586a-4add-bedc-3add17a2bb86" />
+addLast(element)
 
----------------------------------------------------------------------------------------------------------
-**HashSet
-Structure: Backed by a hash table Order: No guaranteed order Use Case: Fast lookup, uniqueness check**
+removeFirst()
 
-✅ DSA Problem: Check if an array has duplicates
+removeLast()
+
+peekFirst()
+
+peekLast()
+
+get(index)
 
 
+🔹 HashSet Revisited: Duplicate Check
+✅ DSA Problem: Check for Duplicates
+java
 import java.util.HashSet;
 public class ContainsDuplicate {
     public static boolean hasDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
         for (int num : nums) {
-            if (!set.add(num)) return true; // add returns false if already present
+            if (!set.add(num)) return true;
         }
         return false;
     }
@@ -159,19 +168,26 @@ public class ContainsDuplicate {
         System.out.println("Has duplicate: " + hasDuplicate(arr));
     }
 }
+🔧 Common Methods
+add(element)
 
-**🔧 Common HashSet Methods:
-add(element) – Adds element if not present
-contains(element) – Checks existence
-remove(element) – Deletes element
-size() – Number of elements
-clear() – Empties the set
-isEmpty() – Checks if empty**
+contains(element)
 
-**Collections.sort(list)
+remove(element)
+
+size()
+
+clear()
+
+isEmpty()
+
+🔧 Collections Utility Methods
+Collections.sort(list)
+
 Collections.reverse(list)
-Collections.max(list), Collections.min(list)
-Collections.frequency(list, element)**
 
-<img width="275" height="186" alt="image" src="https://github.com/user-attachments/assets/09f945a9-3cb0-4035-a4ca-a1040aaecf3e" />
+Collections.max(list)
 
+Collections.min(list)
+
+Collections.frequency(list, element)

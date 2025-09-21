@@ -2,7 +2,7 @@
 
 This guide provides a curated set of Java coding patterns using the core collection classes: `HashSet`, `HashMap`, `ArrayList`, and `LinkedList`. Each section outlines the purpose of the class, its common methods, and practical examples from Data Structures and Algorithms (DSA) problems.
 
------
+----- ALso Link for notes :https://notebook.zohopublic.in/public/notes/u3i1sf9bea7a6f25c4a60941d06a07ac8d76c
 
 ## 🔹 HashSet in Java
 

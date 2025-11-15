@@ -1,0 +1,9 @@
+   // Step 1: Copy the list
+        ListNode* dummy = new ListNode(-1);
+        ListNode* tail = dummy;
+        ListNode* t = head;
+        while (t != NULL) {
+            tail->next = new ListNode(t->val);
+            tail = tail->next;
+            t = t->next;
+        }

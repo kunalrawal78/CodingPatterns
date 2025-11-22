@@ -1,10 +1,10 @@
+# FIRST CHECK IF SORTING Can HELP TO SOLVE PROBLEM
+
 i                       j
 increment             increment
-decrement             decrement
+Increment             decrement
 
 Concept Introduction
-Two pointer approach is an essential part of a programmer’s toolkit, especially in technical interviews. The name does justice in this case, it involves using two pointers to save time and space. (Here, pointers are basically array indexes).
-Just like Binary Search is an optimization on the number of trials needed to achieve the result, this approach is used for the same benefit.
 
 The idea here is to iterate two different parts of the array simultaneously to get the answer faster.
 

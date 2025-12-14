@@ -1,8 +1,4 @@
-# 📌 Prefix Sum Pattern – Complete Guide (C++)
 
-> A **copy-paste ready GitHub README** covering all important **Prefix Sum sub-patterns**, **when to use them**, **C++ implementations**, **LeetCode links**, and a **clear flowchart**.
-
----
 
 ## 🔹 What is Prefix Sum?
 

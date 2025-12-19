@@ -46,3 +46,11 @@ public:
     }
 };
 ```
+questions
+Merge Intervals (medium)
+Insert Interval (medium)
+Intervals Intersection (medium)
+Overlapping Intervals
+Problem Challenge 1: Minimum Meeting Rooms (hard)
+Problem Challenge 2: Maximum CPU Load (hard)
+Problem Challenge 3: Employee Free Time (hard)

@@ -1,0 +1,23 @@
+draw recursion tree 
+--------------
+write base case
+divide problem into small part
+return statement
+--------------
+FRAZ Recursion playlist-->
+Sequence wise problems
+1. find all possible subset /powerset
+2.find permutation of array
+3. find all unique permutation of array
+4.subset 2 / finding unique subsets from array
+5. find all Combinations 
+6. combination sum 1,2,3
+7. letter combinationof phone number
+8.Partition to K equal sum subsets
+9. Maximum length of Concatenated String with Unique
+10. flood fill algorithm
+11. Word search
+12. Rat in a maze
+13. N queen problem
+14.Climbing stairs 1,2
+14. House robber 1,2,3 etc

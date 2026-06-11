@@ -6,14 +6,33 @@ return statement
 --------------------------
 1.To get Count of any thing
 int left=help(arr,based on condition);
-int right=help(arr,based on condition)
+int right=help(arr,based on condition);
 ----------------------------
-2.To get Maximum/Minimum amount or Sum 
+2. Alternate jumps ( use flag=true/false)
 
-int take=arr[i]+help(arr,based on condition);]
-int nottake=help(arr,based on condition);
+if(flag==false)return help(arr,i+1,true);
+
+int take=arr[i]+help(arr,i+1,false);
+int nottake=help(arr,i+1,true);
+
+return Math.max/min(take,nottake);
 ----------------------------
-3. Subarray or Subsequence
+3.To get Maximum/Minimum amount or Sum 
+
+int take=arr[i]+help(arr,based on condition);
+int nottake=help(arr,based on condition);
+return Math.max/min(take,nottake);
+---------------------------------
+4. 0/1 Knapsack
+
+if(i==n)return 0;
+if(wt[i]>cap)return help(val,wt,n,i+1,cap);
+
+int yes=val[i]+ help(val,wt,n,i+1,cap);
+int no=help(val,wt,n,i+1,cap);
+return Math.max/min(yes,no);
+----------------------------
+5. Subarray or Subsequence
 
 -------------------------
 

@@ -3,7 +3,20 @@ draw recursion tree
 write base case
 divide problem into small part
 return statement
---------------
+--------------------------
+1.To get Count of any thing
+int left=help(arr,based on condition);
+int right=help(arr,based on condition)
+----------------------------
+2.To get Maximum/Minimum amount or Sum 
+
+int take=arr[i]+help(arr,based on condition);]
+int nottake=help(arr,based on condition);
+----------------------------
+3. Subarray or Subsequence
+
+-------------------------
+
 FRAZ Recursion playlist-->
 Sequence wise problems
 1. find all possible subset /powerset
@@ -21,3 +34,5 @@ Sequence wise problems
 13. N queen problem
 14.Climbing stairs 1,2
 14. House robber 1,2,3 etc
+15. Striver Dp series
+

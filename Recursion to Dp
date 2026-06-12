@@ -28,7 +28,7 @@ return Math.max/min(take,nottake);
 if(i==n)return 0;
 if(wt[i]>cap)return help(val,wt,n,i+1,cap);
 
-int yes=val[i]+ help(val,wt,n,i+1,cap);
+int yes=val[i]+ help(val,wt,n,i+1,cap-w[i]);
 int no=help(val,wt,n,i+1,cap);
 return Math.max/min(yes,no);
 ----------------------------

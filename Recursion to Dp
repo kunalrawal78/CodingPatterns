@@ -50,8 +50,65 @@ return dp[0][0];
 5. Subarray or Subsequence
 
 -------------------------
+6. Predict the Winner ( Game Theory )
 
+A can either take from start or from end
+B can either take from start or from end
+---------------------->
+ 1.  boolean help(int []arr,int i,int j,int s1,int s2,boolean t){
+        if(i>j){
+            return s1>=s2;
+        }
+        
+        if(t==false){
+         return help(arr,i+1,j,s1,s2+arr[i],true) && help(arr,i,j-1,s1,s2+arr[j],true); 
+        }
+        else{
+        return help(arr,i+1,j,s1+arr[i],s2,false)
+         || help(arr,i,j-1,s1+arr[j],s2,false); 
 
+        }
+     
+    }
+    public boolean predictTheWinner(int[] arr) {
+        int n=arr.length;
+        int i=0,j=n-1;
+     return help(arr,0,j,0,0,true);
+}
+2. dp and bottom up
+   int help(int[] arr, int i, int j, int[][] dp) {
+        if (i == j) {
+            return arr[i];
+        }
+        if (dp[i][j] != -1)
+            return dp[i][j];
+        int l = arr[i] - help(arr, i + 1, j, dp);
+        int r = arr[j] - help(arr, i, j - 1, dp);
+        return dp[i][j] = Math.max(l, r);
+    }
+
+    public boolean predictTheWinner(int[] arr) {
+        int n = arr.length;
+
+        int[][] dp = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = arr[i];
+        }
+
+        for (int i = 2; i <= n; i++) {
+
+            for (int j = 0; j + i - 1 < n; j++) {
+                int k = j + i - 1;
+                int l = arr[j] - dp[j + 1][k];
+                int r = arr[k] - dp[j][k - 1];
+                dp[j][k] = Math.max(l,r);
+
+            }
+        }
+        return dp[0][n - 1] >= 0;
+
+    }
+------------------------------------------
 
 
 FRAZ Recursion playlist-->

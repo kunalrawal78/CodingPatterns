@@ -100,3 +100,24 @@ int lengthOfLongestSubstring(string s) {
 
         return ans; // Return the length of the longest substring
     }
+
+// Case 1: Condition "at least K times"
+while (conditionMet) {
+    // when count >= K
+    ans += (n - j); 
+    // because fixing right boundary j, all extensions to the right are valid
+    // subarrays: [i..j], [i..j+1], ... [i..n-1]
+}
+
+// Case 2: Condition "at most K times" (or less than K times)
+while (conditionMet) {
+    // when count <= K
+    ans += (j - i + 1); 
+    // because fixing right boundary j, all left boundaries from i..j are valid
+    // subarrays: [i..j], [i+1..j], ... [j..j]
+}
+
+
+Condition type	Formula to add	Reason
+At least K	ans += (n - j)	Once condition is met at j, all longer subarrays extending to the right are valid
+At most K	ans += (j - i + 1)	Once condition is met at j, all shorter subarrays ending at j are valid

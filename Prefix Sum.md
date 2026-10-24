@@ -133,6 +133,30 @@ int subarraySum(vector<int>& nums, int k) {
 }
 ```
 
+### ⭐ Tip
+
+If a problem involves **subarrays + sum**, always think **PREFIX SUM first**.
+
+---
+2. Repeated additions/subtractions → Prefix Sum Formula
+
+Whenever you see:
+
+Java
+for(int j=i+1;j<n;j++){
+ans += arr[j] - arr[i];
+}
+
+Expand algebraically:
+count=n-i-1;
+```
+(arr[i+1]+...+arr[n-1])
+-arr[i]*count
+```
+
+Then use prefix sums.
+
+---
 ### 🔗 LeetCode
 
 * [https://leetcode.com/problems/subarray-sum-equals-k/](https://leetcode.com/problems/subarray-sum-equals-k/)
@@ -285,11 +309,3 @@ Arrays / Subarrays
 
 ---
 
-### ⭐ Tip
-
-If a problem involves **subarrays + sum**, always think **PREFIX SUM first**.
-
----
-
-✅ **This file is fully GitHub-ready.**
-Just name it `README.md` and push 🚀

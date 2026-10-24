@@ -138,7 +138,7 @@ int subarraySum(vector<int>& nums, int k) {
 If a problem involves **subarrays + sum**, always think **PREFIX SUM first**.
 
 ---
-2. Repeated additions/subtractions → Prefix Sum Formula
+## Repeated additions/subtractions → Prefix Sum Formula
 
 Whenever you see:
 

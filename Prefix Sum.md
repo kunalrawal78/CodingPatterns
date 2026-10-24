@@ -142,14 +142,14 @@ If a problem involves **subarrays + sum**, always think **PREFIX SUM first**.
 
 Whenever you see:
 
-Java
+```java
 for(int j=i+1;j<n;j++){
 ans += arr[j] - arr[i];
 }
 
 Expand algebraically:
 count=n-i-1;
-```
+
 (arr[i+1]+...+arr[n-1])
 -arr[i]*count
 ```
